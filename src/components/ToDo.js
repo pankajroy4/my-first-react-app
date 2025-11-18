@@ -131,12 +131,24 @@
 //     setTasks(tasks.filter(t => t !== task))    
 //   }
 
-//   function handleEdit(index){
+//   function handleEdit(index, task){
 //     setEditingIndex(index)
+//     setEditingValue(task)
 //   }
 
 //   function handleSave(){
 //     if(editingValue.trim() === "") return
+    //   // Big. issue here:
+    //   // tasks is state array, and this line changes it directly, which is not allowed in React.
+    //   // React state must be treated as immutable.
+    //   // tasks is just a reference to the array inside React's state.
+
+    //   // When we write:
+    //   // tasks[editingIndex] = editingValue;
+    //   // We are modifying the existing array in place.
+    //   // So we directly editing React's internal state object.
+
+
 //     tasks[editingIndex] = editingValue;
 //     setEditingIndex(null)
 //     setEditingValue("")
@@ -162,7 +174,7 @@
 //                         <div>
 //                           {task}
 //                           <button onClick={()=>handleDelete(task)}>Delete</button> 
-//                           <button onClick={()=>handleEdit(index)}>Edit</button>
+//                           <button onClick={()=>handleEdit(index,task)}>Edit</button>
 //                         </div>
 //                       }
 //                       {
@@ -192,9 +204,6 @@ export function ToDo(){
   const [input, setInput] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
   const [editingValue, setEditingValue] = useState("");
-  const total;
-  const completed;
-  
   
   function handleInput(e){
     const val = e.target.value
@@ -203,8 +212,6 @@ export function ToDo(){
 
   function handleAddTask(){
     if(input.trim() === "") return;
-    console.log(tasks)
-    console.log(tasks.length)
     setTasks([...tasks, {id: tasks.length+1, text: input, completed: false}]);
     setInput("");
   }
@@ -213,8 +220,9 @@ export function ToDo(){
     setTasks(tasks.filter(t => t.text !== task))    
   }
 
-  function handleEdit(index){
+  function handleEdit(index, task){
     setEditingIndex(index)
+    setEditingValue(task.text)
   }
 
   function handleSave(){
@@ -234,32 +242,25 @@ export function ToDo(){
 
   function handleComplete(task){
     task.completed = true
-  }
-
-  function completed(){
-    total = tasks.length;
-    completed = tasks.filter(t => t.completed).length;
+    setTasks([...tasks])
   }
 
   return (
     <>
       <input value = {input} onChange={handleInput}/>
       <button className="btn btn-outline-dark" onClick={handleAddTask}>Add Task</button>
-
-        <p>Total: {total}</p>
-        <p>Compleetd: {completed}</p>
- 
-
+      <p>Total: {tasks.length}</p>
+      <p>Completed: {tasks.filter(t => t.completed).length}</p>
       <ul>
         {
           tasks.map((task, index)=>{
-            return  <li key={index}>
-                      {console.log(index, editingIndex, task)}
+            return(
+              <li key={index}>
                       { index !== editingIndex && 
                         <div>
                           {task.text}
                           <button onClick={()=>handleDelete(task.text)}>Delete</button> 
-                          <button onClick={()=>handleEdit(index)}>Edit</button>
+                          <button onClick={()=>handleEdit(index, task)}>Edit</button>
                         </div>
                       }
                       {
@@ -275,10 +276,17 @@ export function ToDo(){
                         !task.completed &&
                         <button onClick={()=>handleComplete(task)}>Mark Complete</button>
                       }
-                    </li>
+              </li>
+            )
           })
         }
       </ul>
     </>
   );
 }
+
+
+
+// In all above ToDO , we did lot of mistake like mutatig the state objet itself, using index as key , deleting item by  text matching , finding by index etc. 
+//  We will fix all this problem in below version:
+
