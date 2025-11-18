@@ -107,6 +107,84 @@
 
 // // ==================Editable==========================
 
+// import { useState } from "react";
+
+// export function ToDo(){
+//   const [tasks, setTasks] = useState([]);
+//   const [input, setInput] = useState("");
+//   const [editingIndex, setEditingIndex] = useState(null);
+//   const [editingValue, setEditingValue] = useState("");
+  
+  
+//   function handleInput(e){
+//     const val = e.target.value
+//     setInput(val);
+//   }
+
+//   function handleAddTask(){
+//     if(input.trim() === "") return;
+//     setTasks([...tasks, input]);
+//     setInput("");
+//   }
+
+//   function handleDelete(task){
+//     setTasks(tasks.filter(t => t !== task))    
+//   }
+
+//   function handleEdit(index){
+//     setEditingIndex(index)
+//   }
+
+//   function handleSave(){
+//     if(editingValue.trim() === "") return
+//     tasks[editingIndex] = editingValue;
+//     setEditingIndex(null)
+//     setEditingValue("")
+//   }
+//   function handleChange(e){
+//     setEditingValue(e.target.value)
+//   }
+
+//   function handleCancel(){
+//     setEditingIndex(null)
+//     setEditingValue("")
+//   }
+
+//   return (
+//     <>
+//       <input value = {input} onChange={handleInput}/>
+//       <button className="btn btn-outline-dark" onClick={handleAddTask}>Add Task</button>
+//       <ul>
+//         {
+//           tasks.map((task, index)=>{
+//             return  <li key={index}>
+//                       { index !== editingIndex && 
+//                         <div>
+//                           {task}
+//                           <button onClick={()=>handleDelete(task)}>Delete</button> 
+//                           <button onClick={()=>handleEdit(index)}>Edit</button>
+//                         </div>
+//                       }
+//                       {
+//                         (index === editingIndex)  &&
+//                         <div>
+//                           <input value= {editingValue} onChange={handleChange} />
+//                           <button onClick={handleSave}>Save</button> 
+//                           <button onClick={handleCancel}>Cancel</button> 
+//                         </div>
+//                       } 
+//                     </li>
+//           })
+//         }
+//       </ul>
+//     </>
+//   );
+// }
+
+
+
+// ================== Tasks as object==========================
+
 import { useState } from "react";
 
 export function ToDo(){
@@ -114,6 +192,8 @@ export function ToDo(){
   const [input, setInput] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
   const [editingValue, setEditingValue] = useState("");
+  const total;
+  const completed;
   
   
   function handleInput(e){
@@ -123,12 +203,14 @@ export function ToDo(){
 
   function handleAddTask(){
     if(input.trim() === "") return;
-    setTasks([...tasks, input]);
+    console.log(tasks)
+    console.log(tasks.length)
+    setTasks([...tasks, {id: tasks.length+1, text: input, completed: false}]);
     setInput("");
   }
 
   function handleDelete(task){
-    setTasks(tasks.filter(t => t !== task))    
+    setTasks(tasks.filter(t => t.text !== task))    
   }
 
   function handleEdit(index){
@@ -137,7 +219,7 @@ export function ToDo(){
 
   function handleSave(){
     if(editingValue.trim() === "") return
-    tasks[editingIndex] = editingValue;
+    tasks[editingIndex].text = editingValue;
     setEditingIndex(null)
     setEditingValue("")
   }
@@ -150,18 +232,33 @@ export function ToDo(){
     setEditingValue("")
   }
 
+  function handleComplete(task){
+    task.completed = true
+  }
+
+  function completed(){
+    total = tasks.length;
+    completed = tasks.filter(t => t.completed).length;
+  }
+
   return (
     <>
       <input value = {input} onChange={handleInput}/>
       <button className="btn btn-outline-dark" onClick={handleAddTask}>Add Task</button>
+
+        <p>Total: {total}</p>
+        <p>Compleetd: {completed}</p>
+ 
+
       <ul>
         {
           tasks.map((task, index)=>{
             return  <li key={index}>
+                      {console.log(index, editingIndex, task)}
                       { index !== editingIndex && 
                         <div>
-                          {task}
-                          <button onClick={()=>handleDelete(task)}>Delete</button> 
+                          {task.text}
+                          <button onClick={()=>handleDelete(task.text)}>Delete</button> 
                           <button onClick={()=>handleEdit(index)}>Edit</button>
                         </div>
                       }
@@ -173,6 +270,11 @@ export function ToDo(){
                           <button onClick={handleCancel}>Cancel</button> 
                         </div>
                       } 
+
+                      {
+                        !task.completed &&
+                        <button onClick={()=>handleComplete(task)}>Mark Complete</button>
+                      }
                     </li>
           })
         }
