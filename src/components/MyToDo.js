@@ -99,7 +99,7 @@ export function MyToDo() {
               ) : (
                 <>
                   <span
-                    className={task.completed ? "text-success" : "text-dark"}
+                    className={task.completed ? "text-success text-decoration-line-through" : "text-dark"}
                   >
                     {task.text}
                   </span>
