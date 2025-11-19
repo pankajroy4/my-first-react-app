@@ -226,10 +226,19 @@
 // export default App;
 
 // =================================== Week 2, Day -2 , Exercise - 2 =========================
-import { ToDo } from "./components/ToDo";
+// import { ToDo } from "./components/ToDo";
+
+// function App(){
+//   return <ToDo/>
+// }
+
+// export default App;
+
+
+import { MyToDo } from "./components/MyToDo";
 
 function App(){
-  return <ToDo/>
+  return <MyToDo/>
 }
 
 export default App;

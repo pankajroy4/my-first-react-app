@@ -288,5 +288,5 @@ export function ToDo(){
 
 
 // In all above ToDO , we did lot of mistake like mutatig the state objet itself, using index as key , deleting item by  text matching , finding by index etc. 
-//  We will fix all this problem in below version:
+//  We will fix all this problem in MyToDo.js file:
 
