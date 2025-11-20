@@ -246,10 +246,19 @@
 //  =================================== Week 2, Day -3 , Exercise - 1 =========================
 
 
-import { MultiStepForm } from "./components/MultiStepForm";
+// import { MultiStepForm } from "./components/MultiStepForm";
+
+// function App(){
+//   return <MultiStepForm/>
+// }
+
+// export default App;
+//  =================================== Week 2, Day -3 , Exercise - 2 =========================
+
+import { Country } from "./components/Country";
 
 function App(){
-  return <MultiStepForm/>
+  return <Country/>
 }
 
 export default App;
