@@ -21,9 +21,9 @@ export function Country() {
       <label htmlFor="country">Choose a country:</label>
       <select name="country" value={country} onChange={handleCountryChange}>
         <option value="">-- Select Country --</option>
-        <option key="1" value="India">India</option>
-        <option key="2" value="USA">USA</option>
-        <option key="3" value="Canada">Canada</option>
+        {Object.keys(data).map(c => (
+          <option key={c} value={c}>{c}</option>
+        ))}
       </select>
 
       {country &&

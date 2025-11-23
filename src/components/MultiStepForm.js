@@ -5,7 +5,7 @@ export function MultiStepForm() {
   const [form, setForm] = useState({ name: "", age: "", email: "", password: "" });
 
   function hanldeNext() {
-    if (step === 1 && (form.name.trim() === "" || form.age.trim() === "")) return
+    if (step === 1 && (form.name.trim() === "" || form.age.trim() === "" || isNaN(form.age.trim()))) return
     else if (step === 2 && (form.email.trim() === "" || form.password.trim() === "")) return
     else if (step === 3) return;
     setStep((prev) => prev + 1)

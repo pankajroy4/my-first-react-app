@@ -255,10 +255,41 @@
 // export default App;
 //  =================================== Week 2, Day -3 , Exercise - 2 =========================
 
-import { Country } from "./components/Country";
+// import { Country } from "./components/Country";
+
+// function App(){
+//   return <Country/>
+// }
+
+// export default App;
+
+//  =================================== Week 2, Day -3 , Exercise - 3 =========================
+
+// import { Skills } from "./components/Skills";
+
+// function App(){
+//   return <Skills/>
+// }
+
+// export default App;
+
+//  =================================== Week 2, Day -3 , Exercise - 4 =========================
+
+// import { Calculator } from "./components/Calculator";
+
+// function App(){
+//   return <Calculator/>
+// }
+
+// export default App;
+
+
+//  =================================== Week 2, Day -3 , Bonus Exercise  =========================
+
+import { FormSummary } from "./components/FormSummary";
 
 function App(){
-  return <Country/>
+  return <FormSummary/>
 }
 
 export default App;
