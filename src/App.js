@@ -283,14 +283,52 @@
 
 // export default App;
 
-
 //  =================================== Week 2, Day -3 , Bonus Exercise  =========================
 
-import { FormSummary } from "./components/FormSummary";
+// import { FormSummary } from "./components/FormSummary";
+
+// function App(){
+//   return <FormSummary/>
+// }
+
+// export default App;
+
+//  =================================== Week 2, Day -4 ,Exercise -1  =========================
+
+// import { HideShow } from "./components/useEffect/HideShow";
+
+// function App(){
+//   return <HideShow/>
+// }
+// export default App;
+
+//  =================================== Week 2, Day -4 ,Exercise -2 =========================
+
+// import { StartMousePositionTracker } from "./components/useEffect/StartMousePositionTracker";
+
+// function App(){
+//   return <StartMousePositionTracker/>
+// }
+// export default App;
+
+
+//  =================================== Week 2, Day -4 ,Exercise -3 =========================
+
+// import { APIFetcher } from "./components/useEffect/APIFetcher";
+
+// function App(){
+//   return <APIFetcher/>
+// }
+// export default App;
+
+
+
+//  =================================== Week 2, Day -4 ,Exercise -3 =========================
+
+import { Timer } from "./components/useEffect/Timer";
 
 function App(){
-  return <FormSummary/>
+  return <Timer/>
 }
-
 export default App;
 
