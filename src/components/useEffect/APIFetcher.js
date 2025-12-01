@@ -6,15 +6,15 @@ export function APIFetcher() {
   useEffect(() => {
     async function loadData() {
       try {
-        setApiResult(prev => ({ ...prev, loading: true }))
+        setApiResult({ loading: true, error: false, data: [], errorMessage: "" });
         const response = await fetch("https://jsonplaceholder.typicode.com/posts")
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
-        setApiResult(prev => ({ ...prev, loading: false, data: result }))
+        setApiResult({ loading: false, error: false, data: result, errorMessage: "" });
       } catch (error) {
-        setApiResult(prev => ({ ...prev, loading: false, error: true, errorMessage: error.message }))
+        setApiResult({ loading: false, error: true, data: [], errorMessage: err.message });
       }
     }
 

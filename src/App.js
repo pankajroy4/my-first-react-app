@@ -323,12 +323,30 @@
 
 
 
-//  =================================== Week 2, Day -4 ,Exercise -3 =========================
+//  =================================== Week 2, Day -4 ,Exercise -4 =========================
 
 import { Timer } from "./components/useEffect/Timer";
 
-function App(){
-  return <Timer/>
+function App() {
+  return (
+    <div>
+      <Timer />
+    </div>
+  );
 }
+
 export default App;
+
+
+//  =================================== Week 2, Day -4 ,Challenge =========================
+
+// import { SmartSearch } from "./components/useEffect/SmartSearch";
+
+// function App() {
+//   return (
+//       <SmartSearch />
+//   );
+// }
+
+// export default App;
 

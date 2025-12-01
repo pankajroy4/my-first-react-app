@@ -23,7 +23,7 @@ export function MousePositionTracker(){
   const [mousePosition, setMousePosition] = useState({x: null,y: null});
 
   function handler(e){
-    setMousePosition(prev => ({...prev, x: e.clientX, y: e.clientY}))
+    setMousePosition({ x: e.clientX, y: e.clientY });
   }
 
   useEffect(()=>{
