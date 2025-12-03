@@ -325,17 +325,17 @@
 
 //  =================================== Week 2, Day -4 ,Exercise -4 =========================
 
-import { Timer } from "./components/useEffect/Timer";
+// import { Timer } from "./components/useEffect/Timer";
 
-function App() {
-  return (
-    <div>
-      <Timer />
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div>
+//       <Timer />
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
 
 
 //  =================================== Week 2, Day -4 ,Challenge =========================
@@ -350,3 +350,63 @@ export default App;
 
 // export default App;
 
+
+//  =================================== Week 2, Day -5 , Exercise - 1 =========================
+
+// import { Broken } from "./components/useEffectAdv/Broken";
+
+// function App() {
+//   return (
+//       <Broken />
+//   );
+// }
+
+// export default App;
+
+
+//  =================================== Week 2, Day -5 , Exercise - 2 =========================
+
+// import { LiveClock } from "./components/useEffectAdv/LiveClock";
+
+// function App() {
+//   return (
+//       <LiveClock />
+//   );
+// }
+
+// export default App;
+
+//  =================================== Week 2, Day -5 , Exercise - 3 =========================
+
+// import { BadFetcher } from "./components/useEffectAdv/BadFetcher";
+// import { useState } from "react";
+// function App() {
+//   const [input, setInput] = useState("");
+
+//   const handleInput = (e)=>{
+//     setInput(e.target.value);
+//   }
+
+//   return (
+//     <div>
+//       <input value ={input} onChange = {handleInput}/>
+//       <BadFetcher query={input} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+//  =================================== Week 2, Day -5 , Exercise - 4 =========================
+
+import { Subscription } from "./components/useEffectAdv/Subscription";
+
+function App() {
+  return (
+      <Subscription />
+  );
+}
+
+export default App;
