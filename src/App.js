@@ -401,12 +401,57 @@
 
 //  =================================== Week 2, Day -5 , Exercise - 4 =========================
 
-import { Subscription } from "./components/useEffectAdv/Subscription";
+// import { Subscription } from "./components/useEffectAdv/Subscription";
 
-function App() {
-  return (
-      <Subscription />
-  );
-}
+// function subscribe(callback) {
+//   const id = setInterval(() => {
+//     callback("New message: " + Math.random());
+//   }, 2000);
 
-export default App;
+//   return () => clearInterval(id);
+// }
+
+// function App() {
+//   return (
+//     <div>
+//       <p>Latest Message:</p>
+//       <Subscription webhook={subscribe} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+//  =================================== Week 2, Day -5 , Exercise - 5 =========================
+
+// import { CustomHook } from "./components/useEffectAdv/CustomHook";
+
+// function App() {
+//   return (
+//     <CustomHook />
+//   );
+// }
+
+// export default App;
+
+
+// ======================================================
+
+
+// useEffect Dependency Drill
+
+// useEffect(() => {
+//   console.log(count);
+// }, []);
+
+// Q: Will it log updated count values later?
+// ans: No.
+// Q: Why/why not?
+// ans: It will not log updated count value later because count is not passed in Dependency Array. 
+// Q: How to fix it if we want to log every change?
+// ans: If we want to log every change then we have pass the count in Dependency Array.
+
+
+//  =================================== Week 2, Day - 6 , Exercise - 1 =========================

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 
-function subscribe(callback) {
-  const id = setInterval(() => {
-    callback("New message: " + Math.random());
-  }, 2000);
+export function Subscription({ webhook }) {
+  const [msg, setMessage] = useState("");
 
-  return () => clearInterval(id);
-}
-
-export function Subscription() {
+  useEffect(() => {
+    const cancelSubs = webhook(setMessage);
+    return cancelSubs;
+  }, [])
   
+  return <p>{msg}</p>
 }
