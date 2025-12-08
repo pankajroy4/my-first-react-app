@@ -454,4 +454,15 @@
 // ans: If we want to log every change then we have pass the count in Dependency Array.
 
 
-//  =================================== Week 2, Day - 6 , Exercise - 1 =========================
+//  =================================== Week 2, Day - 6 , Exercise - 1, 2 =========================
+
+import { Demo } from "./components/customHooks/Demo";
+
+function App() {
+  return (
+    <Demo />
+  );
+}
+
+export default App;
+
