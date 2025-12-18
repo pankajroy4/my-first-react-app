@@ -8,7 +8,11 @@ export function useLocalStorage(key, initialValue) {
 
     const stored = localStorage.getItem(key);
     if (stored !== null) {
-      return JSON.parse(stored);
+      try {
+        return JSON.parse(stored);
+      } catch {
+        return initialValue;
+      }
     }
 
     return initialValue;
