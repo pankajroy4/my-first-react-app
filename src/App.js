@@ -456,11 +456,24 @@
 
 //  =================================== Week 2, Day - 6 , Exercise - 1, 2 =========================
 
-import { Demo } from "./components/customHooks/Demo";
+// import { Demo } from "./components/customHooks/Demo";
+
+// function App() {
+//   return (
+//     <Demo />
+//   );
+// }
+
+// export default App;
+
+
+//  =================================== Week 2, Day- 7 , Mini Project =========================
+
+import { Dashboard } from "./projects/Dashboard/Dashboard";
 
 function App() {
   return (
-    <Demo />
+    <Dashboard />
   );
 }
 
