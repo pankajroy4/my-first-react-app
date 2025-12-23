@@ -5,4 +5,4 @@ export function UserCard({user: {name, role}}){
       <p>Role: {role}</p>
     </div>
   );
-}r
+}

@@ -2,7 +2,7 @@ import SeachBar from "./SearchBar";
 import SearchResults from "./SearchResults";
 
 function SearchContainer(){
-  let searchedText = ""
+  let searchedText = ""// It is not a state, so updating it will not cause re-render and you will not see in UI
 
   const items = ["mango", "orange", "Apple"];
 

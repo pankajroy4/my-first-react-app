@@ -31,3 +31,37 @@ export function FormSummary() {
     </div>
   );
 }
+
+/*
+  Object is a built-in global object provided by the JavaScript language.
+
+  Where does Object come from?
+    In JavaScript, some things are available globally, without importing anything:
+      Object, Array, String, Number, Boolean, Math, JSON, Date
+
+    So when you write:
+      Object.keys(form)
+      Object.values(form)
+      You are using JavaScript's built-in Object utility, not something React gives you.
+      React is not involved here at all.
+
+  What exactly is Object?
+    Think of Object as a toolbox for working with objects.
+    Your form is a plain JS object:
+
+    const form = { name: "", email: "", password: "", age: ""};
+    JavaScript gives you helper methods via Object.
+
+  Breaking down each usage:
+  1:Object.keys(form)
+    Returns all keys (property names)
+    ["name", "email", "password", "age"]
+
+    That is why this works:
+      const totalFields = Object.keys(form).length; => 4
+
+  2:Object.values(form)
+    Object.values(form)
+    Returns all values: ["", "", "", ""]
+    After typing: ["pankaj", "test@gmail.com", "1234", ""]
+*/
