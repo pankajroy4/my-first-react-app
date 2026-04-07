@@ -131,7 +131,7 @@
 
 // =================================== Day -3, Exercise -2 ====(Ex-9)=====================
 
-// import { UserCard } from "./components/UserCard";
+// import { UserCard } from "./components/exercise9/UserCard";
 // function App(){
 //   const user = {name: "Martin Guptil", role: "Actor"}
 //   return (
@@ -156,10 +156,10 @@
 // function App(){
 //   return (
 //     <Layout 
-//     header = {<h2>My Header</h2>}
-//     footer = {<footer>This is the footer!</footer>}
-//     >
-//     <p>This is the main content</p>
+//       header = {<h2>My Header</h2>}
+//       footer = {<footer>This is the footer!</footer>}
+//       >
+//       <p>This is the main content</p>
 //     </Layout>
 //   )
 // }
