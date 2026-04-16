@@ -487,3 +487,16 @@
 
 // export default App;
 
+
+//  =================================== Week 2, Day- 7 , Mini Project =========================
+
+// import { Dashboard } from "./projects/Dashboard/Dashboard";
+
+// function App() {
+//   return (
+//     <Dashboard />
+//   );
+// }
+
+// export default App;
+
